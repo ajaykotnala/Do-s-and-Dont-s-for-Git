@@ -1,7 +1,7 @@
 
 
 <p align="center">
-# Do-s-and-Dont-s-for-Git
+## Do-s-and-Dont-s-for-Git
     <br>
     <small>Git <code>.Do's and Dont's</code> template</small>
 </p>
@@ -35,7 +35,7 @@ The following are the guidelines I like to use for most software projects contai
 Knowing where to look is half the battle. I strongly urge everyone to read (and support) the Pro Git book. The other resources are highly recommended by various people as well.
 
 - [Pro Git]( http://git-scm.com/book/)
-- [Git for Computer Scientists] (http://eagain.net/articles/git-for-computer-scientists/) and a [different/updated version] (http://sitaramc.github.com/gcs/)
+- [Git for Computer Scientists](http://eagain.net/articles/git-for-computer-scientists/) and a [different/updated version](http://sitaramc.github.com/gcs/)
 - [Git from the Bottom Up](https://jwiegley.github.io/git-from-the-bottom-up/)
 - [The Git Parable](http://tom.preston-werner.com/2009/05/19/the-git-parable.html)
 - [Other resources](http://git-scm.com/documentation)
@@ -43,18 +43,19 @@ Knowing where to look is half the battle. I strongly urge everyone to read (and 
 
 
 ## Do commit early and often
-Git only takes full responsibility for your data when you commit. If you fail to commit and then do something poorly thought out, you can run into trouble. Additionally, having periodic checkpoints means that you can understand how you broke something.
+Git only takes full responsibility for your data when you commit. 
+If you fail to commit and then do something poorly thought out, you can run into trouble. 
+Additionally, having periodic checkpoints means that you can understand how you broke something.
 
 
-`Commit Early And Often`. If, after you are done with no breaking changes. I prefer to commit in order to avoid future merge changes. Don’t let tomorrow’s beauty stop you from performing continuous commits today.
+_`Commit Early And Often`_. If, after you are done with no breaking changes. 
+I prefer to commit in order to avoid future merge changes. Don’t let tomorrow’s beauty stop you from performing continuous commits today.
 Some of the commands which comes handy while committing your work are 
 
 
 
 ```
 # git add –all (add all files to stage ie changes files as well as newly added files)
-
 # git status (to check if all files added or not. Easy check is every file will be in green color)
-
 # git commit –a –m “well defined message to understand what you are committing to source code”.
 
