@@ -15,6 +15,7 @@ Git is a flexible and powerful version control system. While Git offers signific
 The following are the guidelines I like to use for most software projects contained within a Git repository.
 
 
+
 ## Table of Contents
 
 - [Do read about git](#do-read-about-git)
@@ -29,6 +30,7 @@ The following are the guidelines I like to use for most software projects contai
 - [Reference Links](#reference-links)
 
 
+
 ## Do read about git
 Knowing where to look is half the battle. I strongly urge everyone to read (and support) the Pro Git book. The other resources are highly recommended by various people as well.
 
@@ -38,6 +40,7 @@ Knowing where to look is half the battle. I strongly urge everyone to read (and 
 - [The Git Parable](http://tom.preston-werner.com/2009/05/19/the-git-parable.html)
 - [Other resources](http://git-scm.com/documentation)
 - [Git wiki](http://git.wiki.kernel.org/)
+
 
 
 ## Do commit early and often
@@ -56,6 +59,7 @@ Some of the commands which comes handy while committing your work are
 # git status (to check if all files added or not. Easy check is every file will be in green color)
 # git commit –a –m “well defined message to understand what you are committing to source code”.
 ```
+
 
 
 ## Don’t panic
@@ -137,6 +141,7 @@ _There are two main methods of doing this:_
    There is no strict correspondence between superproject and subproject repositories except at tag boundaries (though if you need to look back into history you can usually guess pretty well and in any case this is rarely needed).
    
 
+
 ## Miscellaneous “Do”s
 These are random best practices that are too minor or disconnected to go in any other section.
 
@@ -168,6 +173,7 @@ These are random best practices that are too minor or disconnected to go in any 
     While you can normally completely recover from any git experiment involving data that has been fully committed, perhaps you have not committed yet or perhaps you are not sure whether something falls in the category of “trying hard” to destroy history.
     
 **• Best practice** is for there to be a speedbump any time someone is trying to delete or rewrite history, since it is such a bad idea.
+
 
 
 ## Miscellaneous “Don’t”s
@@ -256,8 +262,10 @@ In this list of things to _not_ do, it is important to remember that there are l
     But don’t use ```git-replace``` either.
 
 
+
 ## Do enforce standards
 See [Puppet Version Control](http://projects.puppetlabs.com/projects/1/wiki/Puppet_Version_Control) for an example for a _“Git Update Hook” and “Git Pre-Commit Hook”_ that enforces certain standards. 
+
 
 
 ## Do use useful tools
@@ -271,6 +279,7 @@ More than useful, use of these tools may help you form a best practice!
   
   **•	[gerrit](http://code.google.com/p/gerrit/)**
   To quote the website: Gerrit is a web based code review system, facilitating online code reviews for projects using the Git version control system.
+  
   
   
   ## Reference Links
