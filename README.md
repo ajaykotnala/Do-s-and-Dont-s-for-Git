@@ -1,7 +1,7 @@
 
 
 <p align="center">
-## Do-s-and-Dont-s-for-Git
+ <strong> Do-s-and-Dont-s-for-Git </strong>
     <br>
     <small>Git <code>.Do's and Dont's</code> template</small>
 </p>
