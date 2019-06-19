@@ -53,9 +53,27 @@ I prefer to commit in order to avoid future merge changes. Don’t let tomorrow�
 Some of the commands which comes handy while committing your work are 
 
 
-
 ```
 # git add –all (add all files to stage ie changes files as well as newly added files)
 # git status (to check if all files added or not. Easy check is every file will be in green color)
 # git commit –a –m “well defined message to understand what you are committing to source code”.
+
+
+## Don’t panic
+As long as you have committed your work (or in many cases even added it with `git add`) your work will not be lost for at least two weeks unless you really work at it (run commands that manually purge it).
+
+There are three places where “lost” changes can be hiding.
+
+- **Reflog**.The reflog is where you should look first and by default. It shows you each commit that modified the git repository. 
+```_`gitk --all --date-order $(git log -g --pretty=%H).`_
+- **Lost and found**.Commits or other git data that are no longer reachable through any reference name (branch, tag, etc) are called “dangling” and may be found using `fsck`.
+- **Dangling Commit**.These are the most likely candidates for finding lost data. A dangling commit is a commit no longer reachable by any branch or tag. 
+```_`gitk --all --date-order $(git fsck | grep "dangling commit" | awk '{print $3;}')`_
+- **Stashes**.Finally, you may have stashed the data instead of committing it and then forgotten about it. You can use the git stash list command or inspect them visually using. 
+```_`gitk --all --date-order $(git stash list | awk -F: '{print $1};')`_
+- **Misplaced**.Another option is that your commit is not lost. Perhaps the commit was just made on a different branch from what you remember.Using `git log -Sfoo --all` and `gitk --all --date-order` to try and hunt for your commits on known branches. 
+- **Look elsewhere**.Finally, you should check your backups, testing copies, ask the other people who have a copy of the repo, and look in other repos.
+
+
+
 
