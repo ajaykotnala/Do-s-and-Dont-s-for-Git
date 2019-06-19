@@ -1,5 +1,3 @@
-
-
 <p align="center">
  <strong> Do's and Dont's for Git </strong>
     <br>
@@ -24,8 +22,8 @@ The following are the guidelines I like to use for most software projects contai
 - [Don’t panic](#don’t-panic)
 - [Don’t change published history](#don’t-change-published-history)
 - [Do choose a workflow](#do-choose-a-workflow)
-- [Miscellaneous “Do”s](#miscellaneous-“Do”s)
-- [Miscellaneous “don’t”s](#miscellaneous-“Don’t”s)
+- [Miscellaneous “Do”s](#miscellaneous-“do”s)
+- [Miscellaneous “Don’t”s](#miscellaneous-“don’t”s)
 - [Do enforce standards](#do-enforce-standards)
 - [Do use useful tools](#do-use-useful-tools)
 - [Reference Links](#reference-links)
@@ -170,6 +168,7 @@ These are random best practices that are too minor or disconnected to go in any 
 In this list of things to _not_ do, it is important to remember that there are legitimate reasons to do all of these. However, you should not attempt any of these things without understanding the potential negative effects of each and why they might be in a best practices **“Don’t”** list.
 
 **_DO NOT_**
+
 **_•	Commit anything that can be regenerated from other things that were committed**_
      Things that can be regenerated include binaries, object files, jars, .class, flex/yacc generated code, etc. 
      Really the only place there is room for disagreement about this is if something might take hours to regenerate (rendered images, e.g., but see [Dividing work into repositories](https://sethrobertson.github.io/GitBestPractices/#divide) for more best practices about this) or autoconf generated files (so people can configure and compile without autotools installed).
@@ -184,6 +183,7 @@ In this list of things to _not_ do, it is important to remember that there are l
 **_•	commit large binary files (when possible)_**
     Large is currently relative to the amount of free RAM you have. Remember that not everyone may be using the same memory configuration you are. Support for large files is an active git topic, so watch for changes.
     After running a git gc you should be able to find the largest objects by running:
+    
     ```
     git verify-pack -v .git/objects/pack/pack-*.idx |
     grep blob | sort -k3nr | head |
@@ -192,6 +192,7 @@ In this list of things to _not_ do, it is important to remember that there are l
       awk '{print "'"$b"'",$0;}';
     done
     ```
+    
     Consider using [Git annex](http://git-annex.branchable.com/) or [Git media](https://github.com/schacon/git-media) if you plan on having large binary files and your workflow allows.
 
 **_•	create very large repositories (when possible)_**
@@ -258,8 +259,10 @@ More than useful, use of these tools may help you form a best practice!
 
   **•	[gitolite](https://github.com/sitaramc/gitolite)**
   We already mentioned gitolite above, but it forms a great git server intermediary for access control.
+  
   **•	[gitslave](http://gitslave.sf.net/)**
   We already mentioned gitslave above, but it forms a great alternative to git-submodules when forming superprojects out of repositories you control.
+  
   **•	[gerrit](http://code.google.com/p/gerrit/)**
   To quote the website: Gerrit is a web based code review system, facilitating online code reviews for projects using the Git version control system.
 
