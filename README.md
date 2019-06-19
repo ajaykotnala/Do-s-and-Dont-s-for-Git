@@ -12,22 +12,21 @@
 ## About
 
 Git is a flexible and powerful version control system. While Git offers significant functionality over legacy centralized tools like CVS and Subversion, it also presents so many options for workflow that it can be difficult to determine what is the best method to commit code to a project to follow and what are do’s and don’ts. 
-The following are the guidelines I like to use for most software projects contained within a Git repository. 
+The following are the guidelines I like to use for most software projects contained within a Git repository.
 
 
 ## Table of Contents
 
 - [Do read about git](#do-read-about-git)
 - [Do commit early and often](#do-commit-early-and-often)
-- [Don’t panic](#don’t-panic)
-- [Don’t change published history](#don’t-change-published-history)
+- [Don’t panic](#dont-panic)
+- [Don’t change published history](#dont-change-published-history)
 - [Do choose a workflow](#do-choose-a-workflow)
-- [Miscellaneous “Do”s](#miscellaneous-“do”s)
-- [Miscellaneous “Don’t”s](#miscellaneous-“don’t”s)
+- [Miscellaneous “Do”s](#miscellaneous-dos)
+- [Miscellaneous “Don’t”s](#miscellaneous-donts)
 - [Do enforce standards](#do-enforce-standards)
 - [Do use useful tools](#do-use-useful-tools)
 - [Reference Links](#reference-links)
-
 
 
 ## Do read about git
@@ -58,6 +57,7 @@ Some of the commands which comes handy while committing your work are
 # git commit –a –m “well defined message to understand what you are committing to source code”.
 ```
 
+
 ## Don’t panic
 As long as you have committed your work (or in many cases even added it with `git add`) your work will not be lost for at least two weeks unless you really work at it (run commands that manually purge it).
 
@@ -79,12 +79,8 @@ There are three places where “lost” changes can be hiding.
 - **Look elsewhere**.Finally, you should check your backups, testing copies, ask the other people who have a copy of the repo, and look in other repos.
 
 
-
-
 ## Don’t change published history
 Once you `git push` If you later find out that you messed up, make new commits that fix the problems
-
-
 
 
 ## Do choose a workflow
@@ -132,13 +128,14 @@ _There are two main methods of doing this:_
 
   - _a.	git-submodules_ 
    
-   Git submodules is the native git approach, which provides a strong binding between the superproject repository and the     subproject repositories for every commit. This leads to a baroque and annoying process for updating the subproject. However, if you do not control the subproject (solvable by “forking”) or like to perform blame-based history archeology where you want to find out the absolute correspondence between the different projects at every commit, it is very useful.
+   Git submodules is the native git approach, which provides a strong binding between the superproject repository and the subproject repositories for every commit. 
+   This leads to a baroque and annoying process for updating the subproject. However, if you do not control the subproject (solvable by “forking”) or like to perform blame-based history archeology where you want to find out the absolute correspondence between the different projects at every commit, it is very useful.
      
    - _b.	git slave_ 
    
-   Gitslave is a useful tool to add a subsidiary git repositories to a git superproject when you control and develop on the subprojects at more or less the same time as the superproject, and furthermore when you typically want to tag, branch, push, pull, etc all repositories at the same time. There is no strict correspondence between superproject and subproject repositories except at tag boundaries (though if you need to look back into history you can usually guess pretty well and in any case this is rarely needed).
-
-
+   Gitslave is a useful tool to add a subsidiary git repositories to a git superproject when you control and develop on the subprojects at more or less the same time as the superproject, and furthermore when you typically want to tag, branch, push, pull, etc all repositories at the same time. 
+   There is no strict correspondence between superproject and subproject repositories except at tag boundaries (though if you need to look back into history you can usually guess pretty well and in any case this is rarely needed).
+   
 
 ## Miscellaneous “Do”s
 These are random best practices that are too minor or disconnected to go in any other section.
@@ -170,8 +167,7 @@ These are random best practices that are too minor or disconnected to go in any 
     Ideally try it out in a clone or copy so that recovery is trivial. 
     While you can normally completely recover from any git experiment involving data that has been fully committed, perhaps you have not committed yet or perhaps you are not sure whether something falls in the category of “trying hard” to destroy history.
     
-**Best practice** is for there to be a speedbump any time someone is trying to delete or rewrite history, since it is such a bad idea.
-    
+**• Best practice** is for there to be a speedbump any time someone is trying to delete or rewrite history, since it is such a bad idea.
 
 
 ## Miscellaneous “Don’t”s
@@ -258,8 +254,8 @@ In this list of things to _not_ do, it is important to remember that there are l
 
 **_•	use git-replace**_
     But don’t use ```git-replace``` either.
-    
-    
+
+
 ## Do enforce standards
 See [Puppet Version Control](http://projects.puppetlabs.com/projects/1/wiki/Puppet_Version_Control) for an example for a _“Git Update Hook” and “Git Pre-Commit Hook”_ that enforces certain standards. 
 
@@ -275,13 +271,14 @@ More than useful, use of these tools may help you form a best practice!
   
   **•	[gerrit](http://code.google.com/p/gerrit/)**
   To quote the website: Gerrit is a web based code review system, facilitating online code reviews for projects using the Git version control system.
-
-
-## Reference Links
+  
+  
+  ## Reference Links
 - [https://davidwalsh.name/45-github-issues-dos-donts](https://davidwalsh.name/45-github-issues-dos-donts)
 - [Git Best Practices: Workflow Guidelines](https://www.lullabot.com/articles/git-best-practices-workflow-guidelines)
 - [Follow these simple rules and you’ll become a Git and GitHub master](https://www.freecodecamp.org/news/follow-these-simple-rules-and-youll-become-a-git-and-github-master-e1045057468f/)
 - [Don’t Mess with the Master](https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/)
+- [Git Basic Commands](https://github.com/ajaykotnala/GITCommandsForUse)
 
 
 
