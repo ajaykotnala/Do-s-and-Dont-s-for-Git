@@ -93,23 +93,24 @@ However both reflexive avoidance of branches due to stupidity of other SCM syste
 Pick the style that best suits your project and don’t complain about user’s tactical uses of private branches.
 
 1. **_Branch workflows_**
-       Answering the following questions helps you choose a branch workflow
-       - •	Where do important phases of development occur?
-       - •	How can you identify (and backport) groups of related change?
-       - •	Do you have work which often needs to be updated in multiple distinct long-lived branches?
-       - •	What happens when emergency patches are required?
-       - •	What should a branch for a particular purpose (including user-tactical) be named?
-       - •	What is the lifecycle of a branch?
 
-       See the following references for more information on branch workflows.
-       - •	[Pro Git branching models](http://git-scm.com/book/ch3-4.html)
-       - •	[Git-flow branching model](http://nvie.com/posts/a-successful-git-branching-model/) (with [the associated gitflow tool](https://github.com/petervanderdoes/gitflow-avh))
-       - •	[Gitworkflows man page](http://jk.gs/gitworkflows.html)
-       - •	[A Git Workflow for Agile Teams](http://reinh.com/blog/2009/03/02/a-git-workflow-for-agile-teams.html)
-       - •	[What git branching models actually work](http://stackoverflow.com/questions/2621610/what-git-branching-models-actually-work)
-       - •	[Our New Git Branching Model](http://blogs.remobjects.com/blogs/mh/2011/08/25/p2940)
-       - •	[Branch-per-Feature](http://blogs.remobjects.com/blogs/mh/2011/08/25/p2940)
-       - •	[Who Needs Process](http://widgetsandshit.com/teddziuba/2011/12/process.html)
+      Answering the following questions helps you choose a branch workflow
+      - •	Where do important phases of development occur?
+      - •	How can you identify (and backport) groups of related change?
+      - •	Do you have work which often needs to be updated in multiple distinct long-lived branches?
+      - •	What happens when emergency patches are required?
+      - •	What should a branch for a particular purpose (including user-tactical) be named?
+      - •	What is the lifecycle of a branch?
+
+      See the following references for more information on branch workflows.
+      - •	[Pro Git branching models](http://git-scm.com/book/ch3-4.html)
+      - •	[Git-flow branching model](http://nvie.com/posts/a-successful-git-branching-model/) (with [the associated gitflow tool](https://github.com/petervanderdoes/gitflow-avh))
+      - •	[Gitworkflows man page](http://jk.gs/gitworkflows.html)
+      - •	[A Git Workflow for Agile Teams](http://reinh.com/blog/2009/03/02/a-git-workflow-for-agile-teams.html)
+      - •	[What git branching models actually work](http://stackoverflow.com/questions/2621610/what-git-branching-models-actually-work)
+      - •	[Our New Git Branching Model](http://blogs.remobjects.com/blogs/mh/2011/08/25/p2940)
+      - •	[Branch-per-Feature](http://blogs.remobjects.com/blogs/mh/2011/08/25/p2940)
+      - •	[Who Needs Process](http://widgetsandshit.com/teddziuba/2011/12/process.html)
 
 2. **_Release tagging_**
       Choosing your release workflow (how to get the code to the customer) is another important decision. You should have already considered most of the issues when going over the branching and distributed workflow above, but less obviously, it may affect how and when you perform tagging, and specifically the name of the tag you use.
@@ -128,21 +129,26 @@ Pick the style that best suits your project and don’t complain about user’s 
      **•	Group concepts into a superproject** Once you have divided, now you need to conquer. You can assemble multiple individual repositories into a superproject to group all of the concepts together to create your unified work.
 
 _There are two main methods of doing this:_
-      _a.	git-submodules_ 
-        Git submodules is the native git approach, which provides a strong binding between the superproject repository and the     subproject repositories for every commit. This leads to a baroque and annoying process for updating the subproject. However, if you do not control the subproject (solvable by “forking”) or like to perform blame-based history archeology where you want to find out the absolute correspondence between the different projects at every commit, it is very useful.
-      _b.	git slave_ 
-        Gitslave is a useful tool to add a subsidiary git repositories to a git superproject when you control and develop on the subprojects at more or less the same time as the superproject, and furthermore when you typically want to tag, branch, push, pull, etc all repositories at the same time. There is no strict correspondence between superproject and subproject repositories except at tag boundaries (though if you need to look back into history you can usually guess pretty well and in any case this is rarely needed).
+
+  - _a.	git-submodules_ 
+   
+   Git submodules is the native git approach, which provides a strong binding between the superproject repository and the     subproject repositories for every commit. This leads to a baroque and annoying process for updating the subproject. However, if you do not control the subproject (solvable by “forking”) or like to perform blame-based history archeology where you want to find out the absolute correspondence between the different projects at every commit, it is very useful.
+     
+   - _b.	git slave_ 
+   
+   Gitslave is a useful tool to add a subsidiary git repositories to a git superproject when you control and develop on the subprojects at more or less the same time as the superproject, and furthermore when you typically want to tag, branch, push, pull, etc all repositories at the same time. There is no strict correspondence between superproject and subproject repositories except at tag boundaries (though if you need to look back into history you can usually guess pretty well and in any case this is rarely needed).
 
 
 
 ## Miscellaneous “Do”s
 These are random best practices that are too minor or disconnected to go in any other section.
+
 **•	Always have `.gitignore` root of your project.**
-     o	This file will make sure for not pushing or committing any junk or local data to your repo.
-     o	You can follow some of the predefined template for gitignore file
-     o	[https://www.atlassian.com/git/tutorials/saving-changes/gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore)
-     o	[https://git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore)
-     o	[https://github.com/github/gitignore](https://github.com/github/gitignore) (this is most useful as it contain lot of template) 
+     -	This file will make sure for not pushing or committing any junk or local data to your repo.
+     -	You can follow some of the predefined template for gitignore file
+     -	[https://www.atlassian.com/git/tutorials/saving-changes/gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore)
+     -	[https://git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore)
+     -	[https://github.com/github/gitignore](https://github.com/github/gitignore) (this is most useful as it contain lot of template) 
 
 **•	Copy/move a file in a different commit from any changes to it**
     If you care about git properly displaying the fact that you moved a file, you should copy or move the file in a different commit from any changes you need to immediately make to that file. 
@@ -154,14 +160,18 @@ These are random best practices that are too minor or disconnected to go in any 
     While this tells you the branch where a stash was made, it gives you no idea what is in it. 
     Unless you plan to pop a stash in the next few minutes, you should always give it a name with ```git stash save XXX``` rather than the shorter default ```git stash``` (which should be reserved for very temporary uses). 
     This way you’ll have some idea what a stash is about when you are looking at it months later.
+    
 **•	Protect your bare/server repos against history rewriting**
     If you initialize a bare git repository with “–shared” it will automatically get the ```git-config``` “receive.denyNonFastForwards” set to true. 
-    You should ensure that this is set just in case you did something weird during initialization. Furthermore, you should also set “receive.denyDeletes” so that people who are trying to rewrite history cannot simply delete the branch and then recreate it. 
-    **Best practice** is for there to be a speedbump any time someone is trying to delete or rewrite history, since it is such a bad idea.
+    You should ensure that this is set just in case you did something weird during initialization. Furthermore, you should also set “receive.denyDeletes” so that people who are trying to rewrite history cannot simply delete the branch and then recreate it.
+
 **•	Experiment!**
     When you have an idea or are not sure what something does, try it out! 
     Ideally try it out in a clone or copy so that recovery is trivial. 
     While you can normally completely recover from any git experiment involving data that has been fully committed, perhaps you have not committed yet or perhaps you are not sure whether something falls in the category of “trying hard” to destroy history.
+    
+**Best practice** is for there to be a speedbump any time someone is trying to delete or rewrite history, since it is such a bad idea.
+    
 
 
 ## Miscellaneous “Don’t”s
